@@ -25,4 +25,9 @@ jobs:
 
       - name: Build with Gradle
         run: cd Android && ./gradlew assembleDebug
-        
+              - name: Save APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: gameface-apk
+          path: Android/**/build/outputs/apk/**/*.apk
+          
